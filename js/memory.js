@@ -1,6 +1,5 @@
 class MemoryGame {
   constructor(cards) {
-    //console.log(cards);
     this.cards = cards;
     this.pickedCards = [];
     this.pairsClicked = 0;
@@ -19,13 +18,14 @@ class MemoryGame {
 
   checkIfPair(card1, card2) {
     this.pairsClicked++;
-    if (card1 === card2) {
+    if (card1.dataset.cardName === card2.dataset.cardName) {
       this.pairsGuessed++;
     }
-    return card1 === card2;
+    return card1.dataset.cardName === card2.dataset.cardName;
   }
 
   checkIfFinished() {
+    console.log(this.cards.length / 2, this.pairsGuessed);
     return this.cards.length / 2 === this.pairsGuessed;
   }
 }
