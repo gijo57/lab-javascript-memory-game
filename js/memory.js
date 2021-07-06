@@ -18,14 +18,13 @@ class MemoryGame {
 
   checkIfPair(card1, card2) {
     this.pairsClicked++;
-    if (card1.dataset.cardName === card2.dataset.cardName) {
+    if (card1 === card2) {
       this.pairsGuessed++;
     }
-    return card1.dataset.cardName === card2.dataset.cardName;
+    return card1 === card2;
   }
 
   checkIfFinished() {
-    console.log(this.cards.length / 2, this.pairsGuessed);
     return this.cards.length / 2 === this.pairsGuessed;
   }
 }

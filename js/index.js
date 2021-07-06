@@ -54,7 +54,10 @@ window.addEventListener('load', (event) => {
       }
 
       if (memoryGame.pickedCards.length === 2) {
-        const isPair = memoryGame.checkIfPair(card, memoryGame.pickedCards[0]);
+        const isPair = memoryGame.checkIfPair(
+          card.dataset.cardName,
+          memoryGame.pickedCards[0].dataset.cardName
+        );
         if (isPair) {
           card.classList.add('blocked');
           memoryGame.pickedCards[0].classList.add('blocked');
