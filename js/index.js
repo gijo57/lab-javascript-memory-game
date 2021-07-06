@@ -38,6 +38,7 @@ window.addEventListener('load', (event) => {
     `;
   });
 
+  memoryGame.shuffleCards();
   // Add all the divs to the HTML
   document.querySelector('#memory-board').innerHTML = html;
 
